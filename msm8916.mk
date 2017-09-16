@@ -19,8 +19,10 @@ $(call inherit-product, vendor/huawei/msm8916-common/msm8916-common-vendor.mk)
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+# Overlay 
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+#    $(LOCAL_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -119,6 +121,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors HAL
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
     calmodule.cfg \
     sensors.msm8916 \
     sensors.native
@@ -127,7 +130,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
 # USB ID
-ADDITIONAL_DEFAULT_PROPERTIES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.usb.id.midi=90BA \
     ro.usb.id.midi_adb=90BB \
     ro.usb.id.mtp=1051 \

@@ -33,12 +33,15 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
 #include "property_service.h"
+#include "vendor_init.h"
 #include "log.h"
 #include "util.h"
 
 #include "init_msm8916.h"
+
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {

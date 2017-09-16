@@ -57,6 +57,7 @@ TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(VENDOR_PATH)/init/init_cherry.cpp
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 TARGET_KERNEL_CONFIG := lineageos_cherry_defconfig
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -81,6 +82,7 @@ TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
 TARGET_RECOVERY_DEVICE_DIRS += $(VENDOR_PATH)
 #RECOVERY_VARIANT := twrp
 ifneq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_DENSITY := hdpi
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/recovery.fstab
 else
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/twrp.fstab
@@ -100,8 +102,8 @@ endif
 BOARD_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_11
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(VENDOR_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    $(VENDOR_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
