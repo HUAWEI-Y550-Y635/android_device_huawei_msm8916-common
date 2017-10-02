@@ -42,6 +42,12 @@ static inline const char* BtmGetDefaultName()
 		return "HUAWEI G620S-L01";
 	if (strstr(product_model, "G620S-L02"))
 		return "HUAWEI G620S-L02";
+	if (strstr(product_model, "Y550-L01"))
+		return "HUAWEI Y550-L01";
+	if (strstr(product_model, "Y550-L02"))
+		return "HUAWEI Y550-L02";
+	if (strstr(product_model, "Y550-L03"))
+		return "HUAWEI Y550-L03";
 	if (strstr(product_model, "Che1-CL10"))
 		return "HUAWEI Che1-CL10";
 	if (strstr(product_model, "Che1-CL20"))

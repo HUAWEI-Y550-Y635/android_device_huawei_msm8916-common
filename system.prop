@@ -7,6 +7,7 @@ persist.audio.fluence.speaker=true
 # Display
 ro.sf.lcd_density=320
 ro.qualcomm.cabl=0
+debug.hwui.use_buffer_age=false
 
 # HWUI
 ro.hwui.text_large_cache_height=2048

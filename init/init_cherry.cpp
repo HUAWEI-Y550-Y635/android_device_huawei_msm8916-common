@@ -124,6 +124,33 @@ void init_target_properties()
         property_override("ro.build.description", "G620S-L02-user 4.4.4 GRJ90 C00B380 release-keys");
         property_override("ro.build.fingerprint", "Huawei/G620S-L02/hwG620S-L02:4.4.4/HuaweiG620S-L02/C00B380:user/release-keys");
     }
+    /* Y550-L01 */
+    else if (buf.find("Y550-L01") != std::string::npos) {
+        property_override("ro.product.model", "Y550-L01");
+        property_override("ro.product.device", "Y550-L01");
+        property_override("ro.build.product", "Y550-L01");
+        property_set("ro.telephony.default_network", "9");
+        property_override("ro.build.description", "Y550-L01-user 4.4.4 GRJ90 C00B246 release-keys");
+        property_override("ro.build.fingerprint", "Huawei/Y550-L01/hwY550-L01:4.4.4/HuaweiY550-L01/C00B246:user/ota-rel-keys,release-keys");
+    }
+    /* Y550-L02 */
+    else if (buf.find("Y550-L02") != std::string::npos) {
+        property_override("ro.product.model", "Y550-L02");
+        property_override("ro.product.device", "Y550-L02");
+        property_override("ro.build.product", "Y550-L02");
+        property_set("ro.telephony.default_network", "9");
+        property_override("ro.build.description", "Y550-L02-user 4.4.4 GRJ90 C346B247SP01 release-keys");
+        property_override("ro.build.fingerprint", "Huawei/Y550-L02/hwY550-L02:4.4.4/HuaweiY550-L02/C346B247SP01:user/ota-rel-keys,release-keys");
+    }
+    /* Y550-L03 */
+    else if (buf.find("Y550-L03") != std::string::npos) {
+        property_override("ro.product.model", "Y550-L03");
+        property_override("ro.product.device", "Y550-L03");
+        property_override("ro.build.product", "Y550-L03");
+        property_set("ro.telephony.default_network", "9");
+        property_override("ro.build.description", "Y550-L03-user 4.4.4 GRJ90 C00B249 release-keys");
+        property_override("ro.build.fingerprint", "Huawei/Y550-L03/hwY550-L03:4.4.4/HuaweiY550-L03/C00B249:user/ota-rel-keys,release-keys");
+}
     /* Che1-CL10 */
     else if (buf.find("Che1-CL10") != std::string::npos) {
         property_override("ro.product.model", "Che1-CL10");
