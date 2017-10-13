@@ -42,11 +42,11 @@ PRODUCT_COPY_FILES += \
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=128m \
@@ -72,10 +72,15 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    libbt-vendor
+
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl.legacy \
+    camera.device@1.0-impl.legacy \
     camera.msm8916 \
     Snap
 
@@ -140,6 +145,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf
 
+# Thermal
+PRODUCT_PACKAGES += \
+android.hardware.thermal@1.0-impl \
+
 # USB ID
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.usb.id.midi=90BA \
@@ -151,6 +160,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.usb.id.ums=1037 \
     ro.usb.id.ums_adb=1038 \
     ro.usb.vid=12d1
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # WiFi
 PRODUCT_PACKAGES += \

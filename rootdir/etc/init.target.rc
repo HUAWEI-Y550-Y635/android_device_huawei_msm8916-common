@@ -28,6 +28,7 @@
 on post-fs
     # Symbols required for huawei blobs
     export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_cutils.so:/system/bin/mm-qcamera-daemon|libqcamerasvr-c++.so"
+# export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_cutils.so:/system/bin/mm-qcamera-daemon|libmmcamera2_sensor_modules.so"
 
 on boot
     # charger
