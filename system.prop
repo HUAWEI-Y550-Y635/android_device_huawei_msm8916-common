@@ -24,7 +24,6 @@ ro.hwpp.cust_ons_bin=true
 
 # disable camera debug spam
 persist.camera.hal.debug.mask=0
-persist.media.treble_omx=false
 
 # use 3 threads max for dex2oat
 ro.sys.fw.dex2oat_thread_count=3

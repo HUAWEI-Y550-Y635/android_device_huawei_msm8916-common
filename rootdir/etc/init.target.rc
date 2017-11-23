@@ -27,8 +27,8 @@
 
 on post-fs
     # Symbols required for huawei blobs
-    export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_cutils.so:/system/bin/mm-qcamera-daemon|libqcamerasvr-c++.so"
-# export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_cutils.so:/system/bin/mm-qcamera-daemon|libmmcamera2_sensor_modules.so"
+    export LD_SHIM_LIBS "/system/lib/libcutils.so|libshim_cutils.so:/system/vendor/bin/mm-qcamera-daemon|libqcamerasvr-c++.so"
+    export LD_PRELOAD "/system/lib/libshim_cutils.so"
 
 on boot
     # charger
@@ -70,7 +70,7 @@ on charger
     chmod 0664 /sys/class/power_supply/bms/voltage_ocv
     start vm_bms
 
-service vm_bms /system/bin/vm_bms
+service vm_bms /vendor/bin/vm_bms
     class core
     user root
     group root wakelock
@@ -96,7 +96,7 @@ service oeminfo_server /system/bin/oeminfo_server
     user root
     writepid /dev/cpuset/system-background/tasks
 
-service baseband-sh /system/bin/sh /system/etc/set_baseband.sh
+service baseband-sh /vendor/bin/set_baseband.sh
     class late_start
     user root
     oneshot

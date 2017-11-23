@@ -20,6 +20,10 @@
 #include <log/log.h>
 #endif
 
+// Add atomic backwards compatibility
+#define ANDROID_ATOMIC_INLINE
+#include <cutils/atomic.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
